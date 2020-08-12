@@ -41,7 +41,7 @@ ReceiptsRouter.get('/people/:person', async (req: Express.Request, res: Express.
 
 ReceiptsRouter.post('/', async (req: Express.Request, res: Express.Response) => {
     try {
-        const data: Receipt = req.body.data
+        const data: Receipt = req.body
         const newReceiptModel = new ReceiptModel(data)
         const response = await newReceiptModel.save()
         res.json({ id: response._id })
